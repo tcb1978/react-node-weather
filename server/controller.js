@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 require('dotenv').config();
 const axios = require('axios');
 
@@ -31,3 +32,15 @@ module.exports = {
 };
 
 
+=======
+module.exports = {
+    test(req, res){
+        res.status(200).send('http://i63.tinypic.com/2j9y8p.png');
+    }
+};
+
+
+///make my external api axios calls from the controller
+
+//9. external web API, per endpoint used
+>>>>>>> 82454395c0b45fd6fddb94d5806617ff02f344a9
