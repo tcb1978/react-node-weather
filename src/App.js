@@ -8,7 +8,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-<<<<<<< HEAD
+
       picture: '',
       lat: 33.448377,
       lon: -112.074037,
@@ -48,9 +48,7 @@ class App extends Component {
     axios.get(`http://localhost:3003/api/test/${this.state.zip}`)
       .then(response => {
         console.log('zip');
-        console.log(response.data);
-      })
-=======
+        console.log(response.data);      })
       picture: ''
     }
   }
@@ -62,14 +60,12 @@ class App extends Component {
         picture: response.data
       })
     })
->>>>>>> 82454395c0b45fd6fddb94d5806617ff02f344a9
   }
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
-<<<<<<< HEAD
           Wether App
         </header>
         <section className="App-intro"></section>
@@ -87,14 +83,6 @@ class App extends Component {
               (e) => this.onLatitudeLongitudeSearch(e.target.value)
             } />
         </section>
-=======
-          <img src={this.state.picture} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
->>>>>>> 82454395c0b45fd6fddb94d5806617ff02f344a9
       </div>
     );
   }
