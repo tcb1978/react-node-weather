@@ -8,24 +8,26 @@ class App extends Component {
     super()
     this.state = {
       city: '',
+      zip: 0,
       lon: 0,
       lat: 0,
-      temp: 0,
-      assets: []
+      assets: [],
+      display_city: ''
     }
-    this.onCitySearch = this.onCitySearch.bind(this)
+    this.onCitySearch = this.onCitySearch.bind(this);
+    this.onZipSearch = this.onZipSearch.bind(this)
   }
 
   onCitySearch(value) {
     let assets = this.state.assets
     axios.post(`http://localhost:3003/api/city`, {city: this.state.city})
       .then(response => {
-        assets.push(response.data.main)
+        this.setState({
+          assets: response.data.main,
+          display_city: this.state.city,
+          city: ''
+        })
       })
-      this.setState({
-        assets: assets
-      })
-      console.log(assets);
   }
 
   handleCity(str) {
@@ -34,21 +36,20 @@ class App extends Component {
     })
   }
 
-  // onZipSearch() {
-  //   axios.get(`http://localhost:3003/api/zip/${this.state.zip}`)
-  //     .then(response => {
-  //       console.log('zip');
-  //       console.log(response.data);
-  //     })
-  //     this.setState({
-    
-  //     })
-  // }
+  onZipSearch(val) {
+    axios.get(`http://localhost:3003/api/zip/${this.state.zip}`)
+      .then(response => {
+        console.log(response.data.main);
+        this.setState({
+          // zip: reponse.state.
+        })
+      })
+  }
 
   render() {
 
-    const cityToDisplay = this.state.city.toUpperCase();
-
+    const cityToDisplay = this.state.display_city.toUpperCase();
+  
     return (
       <div className="App">
         <header className="App-header">
@@ -58,7 +59,7 @@ class App extends Component {
         <section className="City">
           <input
             className="city-input"
-            // placeholder={this.state.city}
+            value={this.state.city}
             placeholder="city"
             onChange={(e) => {this.handleCity(e.target.value)}}/>
           <button onClick={this.onCitySearch}>City</button>

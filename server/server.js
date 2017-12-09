@@ -10,7 +10,7 @@ app.use(cors());
 //end point
 // app.get('/api/test/:lat/:lon', controller.latitudeLongitude);
 app.post('/api/city', controller.onCitySearch);
-app.get('/api/zip', controller.onZipSearch);
+app.get('/api/zip/:zip', controller.onZipSearch);
 
 
 
