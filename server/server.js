@@ -8,9 +8,9 @@ app.use(bodyParser.json());
 app.use(cors());
 
 //end point
-// app.get('/api/test/:lat/:lon', controller.test);
-app.get('/api/test/:city', controller.latitudeLongitude);
-// app.get('/api/test/:zip', controller.test);
+// app.get('/api/test/:lat/:lon', controller.latitudeLongitude);
+app.post('/api/city', controller.onCitySearch);
+app.get('/api/zip', controller.onZipSearch);
 
 
 
