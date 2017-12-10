@@ -18,6 +18,7 @@
     "gulp-server-livereload": "^1.9.2",
     "gulp-util": "^3.0.8",
     "gulp-watch": "^4.3.11",
+    "kelvin-to-fahrenheit": "^1.0.0",
     "node-notifier": "^5.1.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

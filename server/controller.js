@@ -3,12 +3,8 @@ const axios = require('axios');
 
 //process.env.WEATHER_API_KEY
 
-//Create an array to hold the assets
-
-let assets = [];
-
 module.exports = {
-    //
+    
     onCitySearch(req, res) {
         const { city } = req.body
         axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.WEATHER_API_KEY}`).then(response => {
@@ -24,8 +20,7 @@ module.exports = {
             res.json(response.data);
         }).catch((err) => console.log(err))
     }
-    ///make my external api axios calls from the controller
-    //9. external web API, per endpoint used 
+
 };
 
 
