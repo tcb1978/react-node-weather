@@ -18,7 +18,7 @@ module.exports = {
     },
 
     onDeleteCity(req, res) {
-        const { city } = req.body
+        const { city } = req.params
         city_assets.map((e, i) => {
             if (e.city) {
                 //Remove from city assets array DELETE

@@ -75,7 +75,6 @@ class App extends Component {
   onUpdateWeather() {
     axios.post(`http://localhost:3003/api/city`, { city: this.state.city }).then(response => {
       console.log(response.data.weather[0].description);
-      alert('update clicked!!')
       this.setState({
         weatherUpdate1: response.data.weather[0].description,
         displayUpdate: true
