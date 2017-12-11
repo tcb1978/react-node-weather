@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { DisplayAsKelvin } from "./Kelvin.js";
+import DisplayUpdate from "./DisplayUpdate.js";
+import { DeleteCity } from "./DeleteCity.js";
+import { UpdateWeather } from "./UpdateWeather.js";
 // import './Weather.css';
 
 class Weather extends Component {
@@ -24,6 +27,9 @@ class Weather extends Component {
                 <p>Maximum Temp: <DisplayAsKelvin temp={temp_max} /></p>
                 <p>Pressure: {pressure} inHg</p>
                 <p>Humidity: {humidity}%</p>
+                {this.props.displayUpdate ? <DisplayUpdate display={this.props.display}/> : null}
+                <DeleteCity onDeleteCity={this.props.onDeleteCity}/>
+                <UpdateWeather onUpdateWeather={this.props.onUpdateWeather}/>
             </div>
         )
     }

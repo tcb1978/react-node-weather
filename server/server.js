@@ -8,10 +8,9 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-//end point
-// app.get('/api/test/:lat/:lon', controller.latitudeLongitude);
 app.post('/api/city', controller.onCitySearch);
 app.get('/api/zip/:zip', controller.onZipSearch);
+app.delete('/api/city', controller.onDeleteCity);
 
 
 
