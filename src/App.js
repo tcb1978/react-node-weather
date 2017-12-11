@@ -23,7 +23,7 @@ class App extends Component {
     }
     this.onCitySearch = this.onCitySearch.bind(this);
     this.onZipSearch = this.onZipSearch.bind(this);
-    this.onDeleteCity = this.onDeleteCity.bind(this);
+    this.onRemove = this.onRemove.bind(this);
     this.onDeleteZip = this.onDeleteZip.bind(this);
     this.onUpdateWeather = this.onUpdateWeather.bind(this);
   }
@@ -43,7 +43,7 @@ class App extends Component {
       })
   }
 
-  onDeleteCity() {
+  onRemove() {
     // axios.delete(`http://localhost:3003/api/city`, { city: this.state.city }).then(response => {
       // console.log(response.data);
       this.setState({
@@ -66,8 +66,7 @@ class App extends Component {
         assets: '',
         display_city: '',
         displayCityComponent: false,
-        displayZipComponent: false,
-        displayUpdate: false
+        displayZipComponent: false
       })
     })
   }
@@ -149,14 +148,14 @@ class App extends Component {
         <div>
           {this.state.displayCityComponent && 
             <Weather city={this.state.assets} 
-            onDeleteCity={this.onDeleteCity} 
+            onRemove={this.onRemove} 
             onUpdateWeather={this.onUpdateWeather}
             displayUpdate={displayUpdate}
             display={display}/>}
 
           {this.state.displayZipComponent && 
             <Weather city={this.state.zipInfo} 
-            onDeleteCity={this.onDeleteCity} 
+            onRemove={this.onRemove} 
             onUpdateWeather={this.onUpdateWeather}
             displayUpdate={displayUpdate}
             display={display}/>}

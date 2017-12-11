@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { DisplayAsKelvin } from "./Kelvin.js";
 import DisplayUpdate from "./DisplayUpdate.js";
-import { DeleteCity } from "./DeleteCity.js";
+import { Remove } from "./Remove.js";
 import { UpdateWeather } from "./UpdateWeather.js";
 // import './Weather.css';
 
@@ -28,7 +28,7 @@ class Weather extends Component {
                 <p>Pressure: {pressure} inHg</p>
                 <p>Humidity: {humidity}%</p>
                 {this.props.displayUpdate ? <DisplayUpdate display={this.props.display}/> : null}
-                <DeleteCity onDeleteCity={this.props.onDeleteCity}/>
+                <Remove onRemove={this.props.onRemove}/>
                 <UpdateWeather onUpdateWeather={this.props.onUpdateWeather}/>
             </div>
         )
